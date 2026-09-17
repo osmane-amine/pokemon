@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/pokemon.dir/src/main.cpp.o CMakeFiles/pokemon.dir/src/Pokemon.cpp.o CMakeFiles/pokemon.dir/src/Pokemon_Vector.cpp.o CMakeFiles/pokemon.dir/src/Pokedex.cpp.o -o pokemon  -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio 
