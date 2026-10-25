@@ -2,11 +2,13 @@
 
 
 int main(){
-    Pokemon bullbizare(1,"Bullbizzare",5,10,1);
-    bullbizare.displayInfo();
+    Pokedex *pokedex = Pokedex::getInstance();
 
-    Pokemon dracofeu(4,"Dracofeu",15,6,15);
+    Pokemon bullbizare(pokedex->findByID(1));
+    bullbizare.displayInfo();
+    Pokemon dracofeu(pokedex->findByID(4));
     dracofeu.displayInfo();
+
 
     bullbizare.attacks(dracofeu);
     dracofeu.displayInfo();
@@ -14,7 +16,7 @@ int main(){
     dracofeu.attacks(bullbizare);
     bullbizare.displayInfo();
 
-    Pokedex pokedex(POKEDEX_PATH);
+    pokedex->findByID(1).displayInfo();
 
     return 0;
 }

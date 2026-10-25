@@ -26,7 +26,7 @@ Pokemon::Pokemon(int id, string name, int evolution, double maxHitPoints, double
 
 //recopie
 Pokemon::Pokemon(const Pokemon& anotherPokemon):
-    id(anotherPokemon.id), name(anotherPokemon.name), attack(anotherPokemon.attack), defense(anotherPokemon.defense)
+    id(anotherPokemon.id), name(anotherPokemon.name), maxHitPoints(anotherPokemon.maxHitPoints), hitPoints(anotherPokemon.maxHitPoints), attack(anotherPokemon.attack), defense(anotherPokemon.defense)
 {}
 
 //destructeur

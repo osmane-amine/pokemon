@@ -11,15 +11,20 @@
 
 #include "Pokemon.h"
 #include "Pokemon_Vector.h"
+#define POKEDEX_PATH "../media/pokedex.csv"
+#include "main.h"
+
 
 class Pokedex : public Pokemon_Vector {
 private:
+    static Pokedex* instance;
     std::vector<Pokemon*> pokemon_vector;
-public:
+protected:
     Pokedex(string fileName);
-
-    int findByID(int id);
-    int findByName(string name);
+public:
+    static Pokedex *getInstance();
+    Pokemon& findByID(int id) override;
+    Pokemon& findByName(string name) override;
 };
 
 

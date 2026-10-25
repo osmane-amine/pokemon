@@ -11,8 +11,8 @@ class Pokemon_Vector {
 private:
     std::vector<Pokemon*> pokemon_vector;
 public:
-    virtual int findByID(int id) = 0; // renvoie l'index du pokemon dans le vecteur
-    virtual int findByName(string name) = 0; // renvoie l'index du pokemon dans le vecteur
+    virtual Pokemon& findByID(int id) = 0; // renvoie l'index du pokemon dans le vecteur
+    virtual Pokemon& findByName(string name) = 0; // renvoie l'index du pokemon dans le vecteur
     // Attention -> s'il y a plusieurs pokemon correspondant, on devrait tous les renvoyer
     void displayList();
     void displayListInfo();

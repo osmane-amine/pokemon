@@ -3,6 +3,15 @@
 //
 #include "../inc/Pokedex.h"
 
+Pokedex* Pokedex::instance{nullptr};
+
+Pokedex *Pokedex::getInstance() {
+    if (instance == nullptr) {
+        instance = new Pokedex(POKEDEX_PATH);
+    }
+    return instance;
+}
+
 
 Pokedex::Pokedex(string fileName):Pokemon_Vector() {
 
@@ -37,22 +46,20 @@ Pokedex::Pokedex(string fileName):Pokemon_Vector() {
 }
 
 
-int Pokedex::findByID(int id) {
-    for (int i=0; std::size(this->pokemon_vector);i++) {
-        if (this->pokemon_vector[i]->getID() == id) {
-            return i;
+Pokemon& Pokedex::findByID(int id) {
+    for (Pokemon* pokemon : pokemon_vector) {
+        if (pokemon->getID() == id) {
+            return *pokemon;
         }
     }
-    std::cerr<<"Pokemon ID not found"<<std::endl;
-    return -1;
+    throw std::runtime_error(std::to_string(id)+" is out of bounds");
 }
 
-int Pokedex::findByName(string name) {
-    for (int i=0; std::size(this->pokemon_vector);i++) {
-        if (this->pokemon_vector[i]->getName() == name) {
-            return i;
+Pokemon& Pokedex::findByName(string name) {
+    for (Pokemon* pokemon : pokemon_vector) {
+        if (pokemon->getName() == name) {
+            return *pokemon;
         }
     }
-    std::cerr<<"Pokemon name not found"<<std::endl;
-    return -1;
+    throw std::runtime_error(name+" does not exist.");
 }
