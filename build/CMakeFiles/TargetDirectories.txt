@@ -1,3 +1,0 @@
-/home/osmane/cpp/projects/pokemon/build/CMakeFiles/pokemon.dir
-/home/osmane/cpp/projects/pokemon/build/CMakeFiles/edit_cache.dir
-/home/osmane/cpp/projects/pokemon/build/CMakeFiles/rebuild_cache.dir
